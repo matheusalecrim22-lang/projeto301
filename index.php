@@ -22,11 +22,12 @@
         $result = $conn->query(query: $sql);
         if ($result->num_rows > 0){
             while ($row = $result->fetch_assoc()){
-            echo "<lie>";
-            echo $row ['status'] == 'cncluida' ? "<s> {$row ['title']} </s>": $row ['title'];
+            echo "<li>";
+            echo $row ['status'] == 'concluida' ? "<s> {$row ['title']} </s>": $row ['title'];
             echo"
-            <a href = 'update_task.php?id={$row['id']}'>V</a>
-            <a href = 'delete_task.php?id={$row['id']}'>L</a>";
+            <a href = 'update_task.php?id={$row['id']}'>✔</a>
+            <a href = 'edit_task.php?id={$row['id']}'>🖍</a>
+            <a href = 'delete_task.php?id={$row['id']}'>❌</a>";
             echo "</li>";
 
         }
