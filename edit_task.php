@@ -1,4 +1,4 @@
-++++<?php
+<?php
 include ('db_connection.php');
 if (isset($_GET['id'])){
 $id = $_GET ['id'];
@@ -26,7 +26,8 @@ if($result->num_rows==1){
     <form action="update_task_name.php" method="POST">
     <input type="hidden" name="id" value="<?php 
     echo $task['id'];?>">
-    <input type="text" name="title" value="<?php htmlspecialchars($task['title']);?>" required>
+    <input type="text" name="title" value="<?php
+    echo htmlspecialchars($task['title']);?>" required>
     <button type="submit"> Salvar alterações </button>
     </form>
     <br>
